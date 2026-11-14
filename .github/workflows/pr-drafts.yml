@@ -20,8 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
+      # The drafter is worked on in the mac-support branch (where the site lives), so the daily run uses that copy.
       - uses: actions/checkout@v4
         with:
+          ref: mac-support
           sparse-checkout: tools/prq
       - uses: actions/setup-python@v5
         with:
